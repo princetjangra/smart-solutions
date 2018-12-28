@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SS | Update</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="#">Smart Solutions</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto flex-grow-1 mt-2 mt-lg-0">
+            <!-- <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Manage</a>
+                <ul class="">
+                    <li class=""><a href="manage-register.html" class="nav-link">Register Vendor/Operator</a></li>
+                    <li class=""><a href="manage-update.html" class="nav-link active">Update Vendor/Operator</a></li>
+                    <li class=""><a href="manage-message.html" class="nav-link">Message Format</a></li>
+                    <li class=""><a href="bind.html" class="nav-link">Bind Service</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="members.html">Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Margin</a>
+                <ul>
+                    <li><a href="margin-member.html" class="nav-link">Member</a></li>
+                    <li><a href="margin-vendor.html" class="nav-link">Vendor</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Balance</a>
+                <ul>
+                    <li><a href="balance-member.html" class="nav-link">Member</a></li>
+                    <li><a href="balance-vendor.html" class="nav-link">Vendor</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="bind.html">Bind</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="transactions.html">Transactions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="accounting.html">Accounting</a>
+            </li>
+            <li class="nav-item mr-auto">
+                <a class="nav-link" href="settings.html">Settings</a>
+            </li>
+            <li class="nav-item ">
+                <span class="p-2 px-5 d-block"><strong>235</strong></span>
+            </li>
+            <li class="nav-item">
+                 <button class="btn btn-outline-danger my-1" type="button">Logout</button>
+            </li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <span>UPDATE VENDOR / OPERATOR INFORMATION</span>
+    <form class="mt-3">
+      <div class="form-group row">
+        <label for="manage-update-select" class="col-sm-4 col-lg-3 col-form-label">Select Vendor / Operator</label>
+        <select class="custom-select col-sm-8 col-lg-5" id="manage-update-select">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="form-group row">
+        <label for="manage-update-name" class="col-sm-4 col-lg-3 col-form-label">Name: </label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="manage-update-name" placeholder="">
+      </div>
+      <div class="form-group row">
+        <label for="memberOperatorStatus" class="col-sm-4 col-lg-3 col-form-label">Type:</label>
+        <div class="col-sm-8 col-lg-5">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="manage-update-mobile" value="option1">
+            <label class="form-check-label col-form-label" for="manage-update-mobile">Mobile Operator</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="manage-update-dish" value="option2">
+            <label class="form-check-label col-form-label" for="manage-update-dish">Dish Operator</label>
+          </div>
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="manage-update-vendor" value="option2">
+              <label class="form-check-label col-form-label" for="manage-update-vendor">Vendor</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+         <label for="code" class="col-sm-4 col-lg-3 col-form-label">Code:</label>
+         <input type="text" class="form-control col-sm-8 col-lg-5" id="code" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Base Margin" class="col-sm-4 col-lg-3 col-form-label">Base Margin:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="baseMargin" placeholder=" ">
+      </div>      
+      <h5>----Use the fields below for Vendor only----</h5>   
+      <div class="form-group row">
+        <label for="Email" class="col-sm-4 col-lg-3 col-form-label">Email:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="email" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Keyword" class="col-sm-4 col-lg-3 col-form-label">Accept Keyword:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="keyword" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Mobile No" class="col-sm-4 col-lg-3 col-form-label">Accept Format to get Mobile No. :</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="mobileNo" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="SKeyword" class="col-sm-4 col-lg-3 col-form-label">Success Keyword:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="sKeyword" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="SFormat" class="col-sm-4 col-lg-3 col-form-label">Success Format to get Mobile No:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="sFormat" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="fKeyword" class="col-sm-4 col-lg-3 col-form-label">Failed Keyword:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="fKeyword" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="fFormat" class="col-sm-4 col-lg-3 col-form-label">Failed Format to get Mobile No:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="fFormat" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Reference No" class="col-sm-4 col-lg-3 col-form-label">Reference No. Format:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="refNo" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Accepted Format" class="col-sm-4 col-lg-3 col-form-label">Accepted Format to get Amount:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="accFormat" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Success Format" class="col-sm-4 col-lg-3 col-form-label">Success Format to get Amount:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="sFormat" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Failed Format" class="col-sm-4 col-lg-3 col-form-label">Failed Fromat to get Amount:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="failedFormat" placeholder=" ">
+      </div>
+      <div class="form-group row">
+        <label for="Hangout ID" class="col-sm-4 col-lg-3 col-form-label">Hangout ID:</label>
+        <input type="text" class="form-control col-sm-8 col-lg-5" id="hangout" placeholder=" ">
+      </div>
+      <!-- </div> -->
+      <button type="submit" class="btn btn-primary">Submit Vendor / Operator</button>
+    </form>
+
+            </div>
+</body>
