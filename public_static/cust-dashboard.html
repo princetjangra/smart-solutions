@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | Smart Solutions</title>
+    <style>
+        body{ padding: 1rem;}
+        a{ padding: 1rem;}
+        div{ margin: 1rem;}
+        table, tr, td{ border: 1px solid;}
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#"></a>
+        <a href="cust-add-op.html">Smart Solutions</a>
+        <a href="cust-op.html">Add Operator</a>
+        <a href="cust-margin.html">List of Operators</a>
+        <a href="cust-signout.html">Signout</a>
+    </div>
+    <div id="balance">
+        <p style="display: inline-block;">Rs. <span id="bal">435.00</span></p>
+        <button id="add">+</button>
+    </div>
+    <div>
+        <select name="custOp" id="cust-op">
+            <option value="1">Airtel</option>
+            <option value="2">Jio</option>
+        </select>
+        <input type="text" pattern="[789][0-9]{9}">
+        <input type="number" placeholder="Enter amount" min="0">
+        <button id="cust-recharge">Do Recharge</button>
+    </div>
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Mobile Number</th>
+            <th>Amount</th>
+            <th>Transaction id</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20/10/2018</td>
+                <td>987654321</td>
+                <td>25</td>
+                <td>9fs4qd6765sdv</td>
+            </tr>
+            <tr>
+                <td>19/10/2018</td>
+                <td>8756470321</td>
+                <td>50</td>
+                <td>g2edf63hgd8dj</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <a href="cust-transactions.html">Show More</a>
+    </div>
+</body>
+</html>
