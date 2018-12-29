@@ -1,5 +1,19 @@
 var db = firebase.firestore();
 
+function updateSelect(){
+    // var value = window.prompt
+    var values= {
+        "1": "Test 1",
+        "2": "Test 2",
+        "3": "Test 3"
+    }
+    var output = [];
+    $.each(values, function(key, value){
+        output.push('<option value="' + key + '">' + value + '</option>');
+    });
+    $('#manage-update-select').html(output.join(''));
+}
+
 $("#update_form").submit(
     function register(e){
         e.preventDefault();
