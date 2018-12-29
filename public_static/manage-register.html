@@ -8,17 +8,14 @@
     <title>SS | Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -81,7 +78,7 @@
   </nav>
   <div class="container mt-3">
     <span>REGISTOR VENDOR / OPERATOR</span>
-    <form>
+    <form id="reg-form">
       <div class="form-group row">
         <label for="Name" class="col-sm-2 col-form-label">Name:</label>
         <input type="text" class="form-control col-sm-8 col-md-5" id="name" placeholder=" "/>
@@ -89,14 +86,18 @@
       <div class="form-group row">
         <label for="memberOperatorStatus" class="col-sm-2 col-form-label">Type:</label>
         <div class="col-sm-10">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reg-mobile" value="option1"/>
-            <label class="form-check-label col-form-label" for="reg-mobile">Mobile Operator</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reg-dish" value="option2"/>
-            <label class="form-check-label col-form-label" for="reg-dish">Dish Operator</label>
-          </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reg-mobile" value="Mobile Operator" checked/>
+                <label class="form-check-label col-form-label" for="reg-mobile">Mobile Operator</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reg-dish" value="Dish Operator"/>
+                <label class="form-check-label col-form-label" for="reg-dish">Dish Operator</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="reg-vendor" value="Vendor"/>
+                <label class="form-check-label col-form-label" for="reg-vendor">Vendor</label>
+            </div>
         </div>
       </div>
       <div class="form-group row">
@@ -107,8 +108,26 @@
         <label for="Base Margin" class="col-sm-2 col-form-label">Base Margin:</label>
         <input type="text" class="form-control col-sm-8 col-md-5" id="baseMargin" placeholder=" "/>
       </div>
-      <button type="submit" class="btn btn-primary">Submit Vendor / Operator</button>
+      <button id="submit_btn"  type="submit" class="btn btn-primary">Submit Vendor / Operator</button>
     </form>
   </div>
+
+  
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+    authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+    databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+    projectId: "unified-recharge-server-a3206",
+    storageBucket: "unified-recharge-server-a3206.appspot.com",
+    messagingSenderId: "251707690647"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="index.js" ></script>
 </body>
 </html>
