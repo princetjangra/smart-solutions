@@ -1,18 +1,45 @@
 var db = firebase.firestore();
 
-function updateSelect(){
-    // var value = window.prompt
-    var values= {
-        "1": "Test 1",
-        "2": "Test 2",
-        "3": "Test 3"
-    }
-    var output = [];
-    $.each(values, function(key, value){
-        output.push('<option value="' + key + '">' + value + '</option>');
+(function updateSelect(){
+
+    db.collection("Operators").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            console.log(doc.data().name)
+            // var output = [];
+            // var value = [];
+            // value.push(doc.data().name)
+            // $.each(values, function(value){
+            // output.push('<option value="' + key + '">' + value + '</option>');
+    // });
+            // $('#manage-update-select').html(output.join(''));
+            $('#manage-update-select').append($('<option></option>').text(doc.data().name));
+        });
     });
-    $('#manage-update-select').html(output.join(''));
-}
+
+})();
+
+// On selecting each value, it prints text of option
+$(document).on('change','#manage-update-select', function() {
+    var selectedValue = $('#manage-update-select').children(":selected").text();
+    $('#manage-update-name').val(selectedValue);
+    var docRef = db.collection("Operators").doc(selectedValue);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            $('#code1').val(doc.data().code);
+            $('#baseMargin1').val(doc.data().margin);
+        } else {
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+    
+});
+
+// (function selectedOption(){
+//     var selectedValue = $('#manage-update-select option:selected').text();
+//     console.log(selectedValue);
+// })();
 
 $("#update_form").submit(
     function register(e){
