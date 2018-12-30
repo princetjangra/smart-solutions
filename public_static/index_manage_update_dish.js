@@ -4,7 +4,7 @@ var db = firebase.firestore();
 
     db.collection("Dish").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            console.log(doc.data().name)
+            console.log(doc.id)
             // var output = [];
             // var value = [];
             // value.push(doc.data().name)
