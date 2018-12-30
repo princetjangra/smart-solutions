@@ -2,7 +2,7 @@ var db = firebase.firestore();
 
 (function updateSelect(){
 
-    db.collection("Operators").get().then(function(querySnapshot) {
+    db.collection("Vendors").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             console.log(doc.data().name)
             // var output = [];
@@ -12,21 +12,21 @@ var db = firebase.firestore();
             // output.push('<option value="' + key + '">' + value + '</option>');
     // });
             // $('#manage-update-select').html(output.join(''));
-            $('#manage-update-select').append($('<option></option>').text(doc.data().name));
+            $('#manage-update-select-vendor').append($('<option></option>').text(doc.data().name));
         });
     });
 
 })();
 
 // On selecting each value, it prints text of option
-$(document).on('change','#manage-update-select', function() {
-    var selectedValue = $('#manage-update-select').children(":selected").text();
-    $('#manage-update-name').val(selectedValue);
-    var docRef = db.collection("Operators").doc(selectedValue);
+$(document).on('change','#manage-update-select-vendor', function() {
+    var selectedValue = $('#manage-update-select-vendor').children(":selected").text();
+    $('#manage-update-name-vendor').val(selectedValue);
+    var docRef = db.collection("Vendors").doc(selectedValue);
     docRef.get().then(function(doc) {
         if (doc.exists) {
-            $('#code1').val(doc.data().code);
-            $('#baseMargin1').val(doc.data().margin);
+            $('#code2').val(doc.data().code);
+            $('#baseMargin2').val(doc.data().margin);
         } else {
             console.log("No such document!");
         }
@@ -41,34 +41,31 @@ $(document).on('change','#manage-update-select', function() {
 //     console.log(selectedValue);
 // })();
 
-$("#update_form").submit(
+$("#update_vendor_form").submit(
     function register(e){
         e.preventDefault();
-
-        var selectedValue = $('#manage-update-select').children(":selected").text();
+        var selectedValue = $('#manage-update-select-vendor').children(":selected").text();
         console.log(selectedValue);
-        db.collection("Operators").doc(selectedValue).delete().then(function() {
+        db.collection("Vendors").doc(selectedValue).delete().then(function() {
             console.log("Document successfully deleted!");
         }).catch(function(error) {
             console.error("Error removing document: ", error);
         });
 
-        var name = document.getElementById("manage-update-name").value;
-        var code = document.getElementById("code1").value;
-        var margin = document.getElementById("baseMargin1").value;
+        var name = document.getElementById("manage-update-name-vendor").value;
+        var code = document.getElementById("code2").value;
+        var margin = document.getElementById("baseMargin2").value;
         
        
        // To find out which radio button is selected 
-       var radio_res = ($('input[name="inlineRadioOptions_update"]:checked').val());
-       console.log(radio_res);
-
-       // To map functions for radio buttons checked
-
-           db.collection("Operators").doc(name).set({
+      
+           var email = document.getElementById("email2").value;
+           db.collection("Vendors").doc(name).set({
                name: name,
                code: code,
                margin: margin,
-               type : "operator"
+               email:email,
+               type : "vendor"
            })
            .then(function() {
                console.log("Document successfully written!");
