@@ -51,19 +51,19 @@ var db = firebase.firestore();
         });
     });
 
-    function appendTableColumn(table, rowData) {
-        var lastRow = $('<tr/>').appendTo(table.find('tbody:last'));
-        $.each(rowData, function (colIndex, item) {
-            lastRow.append($('<td/>').text(item));
-        })
-        return lastRow;
-    }
+    // function appendTableColumn(table, rowData) {
+    //     var lastRow = $('<tr/>').appendTo(table.find('tbody:last'));
+    //     $.each(rowData, function (colIndex, item) {
+    //         lastRow.append($('<td/>').text(item));
+    //     })
+    //     return lastRow;
+    // }
 
-    $(document).ready(function(){
-        appendTableColumn($('#bind-table'), dat);
-    })
-    // $.each((item) => $('#bind-table tbody').append(('<tr>').append('<td>' + item + '</td>')));
-    // $("<tr><td>prependTo</td></tr>").prependTo("table > tbody");
+    // $(document).ready(function(){
+    //     appendTableColumn($('#bind-table'), dat);
+    // })
+    // // $.each((item) => $('#bind-table tbody').append(('<tr>').append('<td>' + item + '</td>')));
+    // // $("<tr><td>prependTo</td></tr>").prependTo("table > tbody");
 })();
 
 (function updateSelectOP(){
@@ -150,7 +150,7 @@ var db = firebase.firestore();
         var vendor = $('#bind_vendor_select').children(":selected").text();
         var mode = $('#bind_mode').children(":selected").text();
         var dbRef = db.collection("Bind").doc(operator)
-        .collection(vendor).doc(vendor);
+        .collection("Binded").doc(vendor);
         if($('#inlineRadioOptions_bind_active').prop('checked')){
             dbRef.set({
                 mode:mode,
