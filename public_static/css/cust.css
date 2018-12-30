@@ -1,0 +1,40 @@
+body{
+    background-color: lightgrey;
+}
+
+/* Navbar */
+.navbar{
+    margin: 0;
+}
+
+nav{
+    background-color: #333;
+}
+
+nav ul .nav-link{
+    /* padding: 1rem; */
+}
+
+nav .navbar-nav .nav-link.active{
+    color: #fec400;
+}
+
+nav ul .nav-item:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fec400;
+    transition: 0.2s;
+}
+
+nav ul .nav-item:hover::after{
+    width: 100%;
+}
+
+/* .navbar-nav .active > .nav-link,
+.navbar-nav .nav-link.active,
+nav ul li .navlink.show,
+ul .show > .nav-link,
+ul .nav-link:focus,
+ul .nav-link:hover */
