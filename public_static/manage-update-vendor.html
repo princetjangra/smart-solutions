@@ -80,18 +80,18 @@
             </ul>
         </div>
     </nav>
-    <div class="container mt-3">
+    <div class="container my-3">
         <span>UPDATE VENDOR INFORMATION</span>
         <form class="mt-3" id="update_vendor_form">
             <div class="form-group row">
                 <label for="manage-update-select" class="col-sm-4 col-lg-3 col-form-label">Select VENDOR</label>
-                <select class="custom-select col-sm-8 col-lg-5" id="manage-update-select">
+                <select class="custom-select col-sm-8 col-lg-5" id="manage-update-select-vendor">
                     <option value="1" selected disabled>Select Vendor</option>
                 </select>
             </div>
             <div class="form-group row">
                 <label for="manage-update-name" class="col-sm-4 col-lg-3 col-form-label">Name: </label>
-                <input type="text" class="form-control col-sm-8 col-lg-5" id="manage-update-name" placeholder="">
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="manage-update-name-vendor" placeholder="">
             </div>
             <!-- <div class="form-group row">
                 <label for="memberOperatorStatus" class="col-sm-4 col-lg-3 col-form-label">Type:</label>
@@ -115,20 +115,85 @@
             </div> -->
             <div class="form-group row">
                 <label for="code" class="col-sm-4 col-lg-3 col-form-label">Code:</label>
-                <input type="text" class="form-control col-sm-8 col-lg-5" id="code1" placeholder=" ">
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="code2" placeholder=" ">
             </div>
             <div class="form-group row">
                 <label for="Base Margin" class="col-sm-4 col-lg-3 col-form-label">Base Margin:</label>
-                <input type="text" class="form-control col-sm-8 col-lg-5" id="baseMargin1" placeholder=" ">
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="baseMargin2" placeholder=" ">
             </div>
             
+            <div class="form-group row">
+                <label for="Email" class="col-sm-4 col-lg-3 col-form-label">Email:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="email2" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Keyword" class="col-sm-4 col-lg-3 col-form-label">Accept Keyword:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="keyword" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Mobile No" class="col-sm-4 col-lg-3 col-form-label">Accept Format to get Mobile No. :</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="mobileNo" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="SKeyword" class="col-sm-4 col-lg-3 col-form-label">Success Keyword:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="sKeyword" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="SFormat" class="col-sm-4 col-lg-3 col-form-label">Success Format to get Mobile No:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="sFormat" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="fKeyword" class="col-sm-4 col-lg-3 col-form-label">Failed Keyword:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="fKeyword" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="fFormat" class="col-sm-4 col-lg-3 col-form-label">Failed Format to get Mobile No:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="fFormat" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Reference No" class="col-sm-4 col-lg-3 col-form-label">Reference No. Format:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="refNo" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Accepted Format" class="col-sm-4 col-lg-3 col-form-label">Accepted Format to get Amount:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="accFormat" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Success Format" class="col-sm-4 col-lg-3 col-form-label">Success Format to get Amount:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="sFormat" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Failed Format" class="col-sm-4 col-lg-3 col-form-label">Failed Fromat to get Amount:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="failedFormat" placeholder=" ">
+            </div>
+            <div class="form-group row">
+                <label for="Hangout ID" class="col-sm-4 col-lg-3 col-form-label">Hangout ID:</label>
+                <input type="text" class="form-control col-sm-8 col-lg-5" id="hangout" placeholder=" ">
+            </div>
+            <!-- </div> -->
+
             <button type="submit" id="" class="btn btn-primary">Update</button>
         </form>
         <div>
             <span id="manage-update-vendor-success"></span>
         </div>
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+            authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+            databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+            projectId: "unified-recharge-server-a3206",
+            storageBucket: "unified-recharge-server-a3206.appspot.com",
+            messagingSenderId: "251707690647"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+    <script src="index_manage_update_vendor.js"></script>
 </body>
 
 </html>

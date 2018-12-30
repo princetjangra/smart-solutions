@@ -80,77 +80,90 @@
             </ul>
         </div>
     </nav>
-  <div class="container mt-3">
-    <h4>BIND OPERATOR WITH VENDOR AND SERVICE</h4>
-    <form class="mt-2">
-      <div class="form-group row">
-        <label for="Operator" class="col-sm-2 col-xs-1 col-form-label">Operator</label>
-        <select class="custom-select col-8 col-lg-5">
-          <option value="1">Airtel</option>
-          <option value="2">Vodafone</option>
-        </select>
-      </div>
-      <div class="form-group row">
-        <label for="Mode" class="col-sm-2 col-xs-1 col-form-label">Mode</label>
-        <select class="custom-select col-8 col-lg-5">
-          <option value="1">Gtalks</option>
-          <option value="2">xxx</option>
-        </select>
-      </div>
-      <div class="form-group row">
-        <label for="Vendor" class="col-sm-2 col-xs-1 col-form-label">Vendor</label>
-        <select class="custom-select col-8 col-lg-5">
-          <option selected></option>
-          <option value="1">xxx</option>
-          <option value="2">yyy</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary mb-3">Submit (Insert/Update)</button>
+    <div class="container mt-3">
+        <h4>BIND OPERATOR WITH VENDOR AND SERVICE</h4>
 
-      <div class="form-group">
-          <div class="col-sm-10">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Active</label>
+        <div class="form-group row">
+            <label for="Operator" class="col-sm-2 col-xs-1 col-form-label">Operator</label>
+            <select class="custom-select col-8 col-lg-5" id="bind_operator_select">
+
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="Mode" class="col-sm-2 col-xs-1 col-form-label">Mode</label>
+            <select class="custom-select col-8 col-lg-5" id="bind_mode">
+                <option value="1">Gtalk</option>
+                <option value="2">API</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="Vendor" class="col-sm-2 col-xs-1 col-form-label">Vendor</label>
+            <select class="custom-select col-8 col-lg-5" id="bind_vendor_select">
+                <option selected></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3" onclick="addBind()">Submit (Insert/Update)</button>
+
+        <div class="form-group">
+            <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions_bind" id="inlineRadioOptions_bind_active"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Active</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions_bind" id="inlineRadioOptions_bind_inactive"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Inactive</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Inactive</label>
-            </div>
-          </div>
-      </div>   
-      <button type="submit" class="btn btn-primary mb-4">Update Status</button>
-    </form>
-  </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-4" onclick="updateBind()">Update Status</button>
 
-  <table class="table table-striped mx-1">
-    <thead>
-      <tr>
-        <th scope="col">Operator</th>
-        <th scope="col"> Vendor</th>
-        <th scope="col">Format</th>
-        <th scope="col">Service</th>
-        <th scope="col">Status/th>    
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>AC</td>  
-        <td>O2</td>
-        <td>ACL mob amt</td>
-        <td>Gtalk</td>
-        <td>Inactive</td>
-      </tr>
-      <tr>
-        <td>AT</td>  
-        <td>O2</td>
-        <td>std mob amt</td>
-        <td>Gtalk</td>
-        <td>Active</td>
-      </tr>
-    </tbody>
-  </table>
+    </div>
 
+    <table class="table table-striped mx-1" id="bind-table">
+        <thead>
+            <tr>
+                <th scope="col">Operator</th>
+                <th scope="col">Vendor</th>
+                <!-- <th scope="col">Format</th> -->
+                <th scope="col">Status</th>
+                <th scope="col">Service</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>AC</td>
+                <td>O2</td>
+                <td>Inactive</td>
+                <td>Gtalk</td>
+            </tr>
+            <tr>
+                <td>AT</td>
+                <td>O2</td>
+                <td>Active</td>
+                <td>Gtalk</td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+            authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+            databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+            projectId: "unified-recharge-server-a3206",
+            storageBucket: "unified-recharge-server-a3206.appspot.com",
+            messagingSenderId: "251707690647"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="index_bind.js"></script>
 </body>
 
 </html>

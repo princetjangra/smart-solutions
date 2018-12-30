@@ -9,8 +9,7 @@
         crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/nav.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
@@ -81,8 +80,8 @@
         </div>
     </nav>
     <div class="container">
-        <form>
-            <form class="my-3">
+        
+            <!-- <form class="my-3"> -->
                 <div class="form-row">
                     <div class="col-10 col-md-5 mx-auto  mb-3">
                         <label for="Operator" class="">Vendor</label>
@@ -102,18 +101,18 @@
                         </select>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
 
             <span>Update Margin for Vendors</span>
 
             <div class="form-group row">
-                <label for="memberMargin" class="col-sm-2 col-form-label">Vendor Margin</label>
+                <label for="vendorMargin" class="col-sm-2 col-form-label">Vendor Margin</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="memberMargin" placeholder="Enter vendor's Margin">
+                    <input type="text" class="form-control" id="vendorMargin" placeholder="Enter vendor's Margin">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="memberOperatorStatus" class="col-sm-2 col-form-label">Member Operator Status</label>
+                <label for="vendorOperatorStatus" class="col-sm-2 col-form-label">Vendor Operator Status</label>
                 <div class="col-sm-10">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -125,8 +124,8 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
+            <button type="submit" class="btn btn-primary" onclick="setMargin()">Update</button>
+    
     </div>
     <br>
 
@@ -151,6 +150,22 @@
                 <td>0.0</td>
         </tbody>
     </table>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+        authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+        databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+        projectId: "unified-recharge-server-a3206",
+        storageBucket: "unified-recharge-server-a3206.appspot.com",
+        messagingSenderId: "251707690647"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="index_margin_vendor.js"></script>
 </body>
 
 </html>
