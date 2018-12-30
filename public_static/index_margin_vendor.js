@@ -1,10 +1,9 @@
 var db = firebase.firestore();
 
-
 (function setOperators() {
     db.collection("Operators").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id)
+            $('#manage-vendor-vendor').append($('<option></option>').text(doc.id));
         });
     });
 })();
@@ -12,7 +11,7 @@ var db = firebase.firestore();
 (function setVendors() {
     db.collection("Vendors").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id)
+            $('#manage-vendor-operator').append($('<option></option>').text(doc.id));
         });
     });
 })();
