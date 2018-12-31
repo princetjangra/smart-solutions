@@ -1,12 +1,16 @@
 var db = firebase.firestore();
 
+const pages = 1;
+
 (function displayTable(){
-    var dbRefOperators = db.collection("Transaction");
+    var dbRefOperators = db.collection("Transaction")
+   
+    
   
     dbRefOperators.get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            var dbRef = dbRefOperators.doc(doc.id).collection("t_id");
-            
+            var dbRef = dbRefOperators.doc(doc.id).collection("t_id").limit(pages);
+
             dbRef.get().then(function(querySnapshot) {
                 querySnapshot.forEach(function (doc) {
 
@@ -39,3 +43,8 @@ var db = firebase.firestore();
     });
 
 })();
+
+function showMore() {
+    pages+=1;
+    
+}
