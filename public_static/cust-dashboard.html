@@ -9,8 +9,8 @@
         body{ padding: 1rem;}
         a{ padding: 1rem;}
         div{ margin: 1rem;}
-        table, tr, td{ border: 1px solid;}
     </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
@@ -34,31 +34,37 @@
         <input type="number" placeholder="Enter amount" min="0">
         <button id="cust-recharge">Do Recharge</button>
     </div>
-    <table>
+    <table class="cust-transactions-table" border="1px solid">
         <thead>
+            <th>Transaction ID</th>
+            <th>Member Number</th>
             <th>Date</th>
-            <th>Mobile Number</th>
-            <th>Amount</th>
-            <th>Transaction id</th>
+            <th>Operator Name</th>
+            <th>Request Number</th>
         </thead>
         <tbody>
-            <tr>
-                <td>20/10/2018</td>
-                <td>987654321</td>
-                <td>25</td>
-                <td>9fs4qd6765sdv</td>
-            </tr>
-            <tr>
-                <td>19/10/2018</td>
-                <td>8756470321</td>
-                <td>50</td>
-                <td>g2edf63hgd8dj</td>
-            </tr>
+
         </tbody>
     </table>
     <div>
-        <a href="cust-transactions.html">Show More</a>
+        <a href="cust-transactions.html" onclick="showMore()">Show More</a>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+            authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+            databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+            projectId: "unified-recharge-server-a3206",
+            storageBucket: "unified-recharge-server-a3206.appspot.com",
+            messagingSenderId: "251707690647"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="js/cust-transaction.js"></script>
 </body>
 
 </html>

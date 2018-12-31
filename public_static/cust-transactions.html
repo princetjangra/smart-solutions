@@ -21,26 +21,40 @@
     <!-- <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script> -->
-    <script src="js/cust.js"></script>
+    <!-- <script src="js/cust.js"></script> -->
     <div>
         <a href="cust-dashboard.html"><--</a>
     </div>
     <br>
     <br>
-    <table border="1px">
+    <table class="cust-transactions-table" border="1px solid">
         <thead>
-            <th>Number</th>
-            <th>Amount</th>
-            <th>Tid</th>
+            <th>Transaction ID</th>
+            <th>Member Number</th>
+            <th>Date</th>
+            <th>Operator Name</th>
+            <th>Request Number</th>
         </thead>
         <tbody>
-            <tr>
-                <td>9854337469</td>
-                <td>100</td>
-                <td>wf87et3ruyy78ser</td>
-            </tr>
+            
         </tbody>
     </table>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+            authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+            databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+            projectId: "unified-recharge-server-a3206",
+            storageBucket: "unified-recharge-server-a3206.appspot.com",
+            messagingSenderId: "251707690647"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="js/cust-transaction.js"></script>
 </body>
 
 </html>
