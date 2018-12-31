@@ -22,8 +22,24 @@
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
-    <script>
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-3">
+        <a href="" class="navbar-brand">Smart Solutions</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-index">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-index">
+            <ul class="navbar-nav index-nav ml-auto">
+                <li class="nav-item">
+                    <a href="signin.html" class="nav-link">Signin</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cust-register.html" class="nav-link">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div id="nav-placeholder"></div> -->
+    <!-- <script>
         $(function() {
             $('#nav-placeholder').load('cust-nav.html');
         });
