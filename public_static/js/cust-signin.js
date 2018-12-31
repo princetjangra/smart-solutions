@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       var email_id = user.uid;
 
       var email_verified = user.emailVerified;
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id + "verified" + email_verified;
 
     }
 
