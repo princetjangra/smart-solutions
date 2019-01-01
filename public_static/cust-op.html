@@ -65,7 +65,42 @@
             <tbody>
             </tbody>
     </table>
+    <!-- Dish operator -->
+    <div>
+        <a href="cust-dashboard.html"></a>
+        </div>
+        <br>
+        <br>
+    <div>
+        <select name="" id="cust-add-dish-op">
+            <option value="1" selected disabled hidden>Select an operator to Add</option>
+        </select>
+        <div>
+            <button onclick="addDishOperator()">Request to ADD</button>
+        </div>
+    </div>
+    <div>
+        <select name="" id="cust-del-dish-op">
+            <option value="1" selected disabled hidden>Select an operator to Delete</option>
+        </select>
+        <div>
+            <button onclick="deleteDishOperator()">Request to DELETE</button>
+        </div>
+    </div>
+    <ul>
+        <li>Dish Tv</li>
+        <li>Jio</li>
+        <li>d2h</li>
+    </ul>
 
+    <table class="table" id="cust-dish-op-table">
+        <thead>
+            <th>Dish-Operators</th>
+            <th>Dish-margin</th>
+            </thead>
+            <tbody>
+            </tbody>
+    </table>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
     <script>
