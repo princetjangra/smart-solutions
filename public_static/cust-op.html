@@ -13,8 +13,7 @@
         crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/cust.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
@@ -22,34 +21,66 @@
     <!-- <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script> -->
-    <script src="js/cust.js"></script>
+    <!-- <script src="js/cust.js"></script> -->
+    <style>
+        #cust-add-op:invalid, #cust-del-op:invalid{
+            color: grey;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
     <div>
-            <a href="cust-dashboard.html"><--</a>
+        <a href="cust-dashboard.html"></a>
         </div>
         <br>
         <br>
     <div>
         <select name="" id="cust-add-op">
-            <option value="1">Idea</option>
-            <option value="2">MTNL</option>
+            <option value="1" selected disabled hidden>Select an operator to Add</option>
         </select>
         <div>
-            <button>Request to ADD</button>
+            <button onclick="addOperator()">Request to ADD</button>
         </div>
     </div>
     <div>
         <select name="" id="cust-del-op">
-            <option value="1">Airtel</option>
-            <option value="1">Jio</option>
+            <option value="1" selected disabled hidden>Select an operator to Delete</option>
         </select>
         <div>
-            <button>Request to DELETE</button>
+            <button onclick="deleteOperator()">Request to DELETE</button>
         </div>
     </div>
     <ul>
         <li>Airtel</li>
         <li>Jio</li>
     </ul>
-</body>
 
+    <table class="table" id="cust-op-table">
+        <thead>
+            <th>Operators</th>
+            <th>margin</th>
+            </thead>
+            <tbody>
+            </tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+            authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+            databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+            projectId: "unified-recharge-server-a3206",
+            storageBucket: "unified-recharge-server-a3206.appspot.com",
+            messagingSenderId: "251707690647"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="js/cust-op.js"></script>
+</body>
 </html>

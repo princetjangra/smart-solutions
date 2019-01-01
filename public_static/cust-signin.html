@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700" rel="stylesheet"> 
+  <title>Sign In</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/cust-signin.css"/>
 </head>
 <body>
-    <!-- <form action="" method="post"> -->
-        <div>
+
+    <div id="login_div" class="main-div">
+        <h3>Sign In</h3>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+
+        <button onclick="login()">Sign In</button>
+        <a href="cust-register.html">Create a new account</a>
+    </div>
+ <!--- 
+ <div id="signUp_div" class="signUp-div">
+    <h3>Create an account</h3>
+   <div>
             <label for="cust-name">Enter your name </label>
             <input type="text" id="cust-name" placeholder="John Doe">
         </div>
@@ -33,16 +41,18 @@
             <label for="cust-pass">Enter password</label>
             <input type="password" name="" id="cust-pass">
         </div>
-        </div>
         <br>
-        <!-- <button type="submit">Register</button> -->
-        <button onclick="create_account()">Create a new account</button>
-    <!-- </form> -->
-    <br>
-    <div>
-        <a href="cust-signin.html">Have account? Signin</a>
+     <button>Register</button>      
+  </div>
+!-->
+    <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+    <button onclick="send_verification()">Send Verification</button>
     </div>
 
+    
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
     <script>
@@ -58,5 +68,6 @@
       firebase.initializeApp(config);
     </script>
     <script src="js/cust-signin.js"></script>
+
 </body>
 </html>

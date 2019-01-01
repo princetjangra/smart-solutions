@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       var email_id = user.uid;
 
       var email_verified = user.emailVerified;
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id + "verified" + email_verified;
 
     }
 
@@ -70,18 +70,18 @@ function create_account()
     // {
     var user = firebase.auth().currentUser;
     db.collection("users").doc(user.uid).set({
-    name:userName,
-    email:userEmail,
-    number:userNumber,
-    address:userAddress,
-    password:userPass
+      name: userName,
+      email: userEmail,
+      number: userNumber,
+      address: userAddress,
+      password: userPass
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        window.location.href="cust-login.html";
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+      window.location.href = "cust-signin.html";
     })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
     });
 
     user.sendEmailVerification().then(function() {

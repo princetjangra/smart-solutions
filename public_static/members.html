@@ -38,7 +38,7 @@
                         <li class=""><a href="manage-update.html" class="nav-link">Update Mobile Operator</a></li>
                         <li class=""><a href="manage-update-dish.html" class="nav-link">Update Dish Operator</a></li>
                         <li class=""><a href="manage-update-vendor.html" class="nav-link">Update Vendor</a></li>
-                        <li class=""><a href="manage-message.html" class="nav-link">Message Format</a></li>
+                        <li class=""><a href="operator-request.html" class="nav-link">Operator Requests</a></li>
                         <li class=""><a href="bind.html" class="nav-link">Bind Service</a></li>
                     </ul>
                 </li>
@@ -82,22 +82,24 @@
     </nav>
     <div class="container my-3">
         <h3>APPROVE REQUESTS</h3>
-        <table class="table table-striped">
+        <table class="table table-striped" id="member_table">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile No.</th>
-                    <th>Requests</th>
+                    <th>Approve</th>
+                    <th>Reject</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td>Andrew</td>
                     <td>andrew@abc.com</td>
                     <td>9847367524</td>
-                    <td><button class="btn btn-primary">Approve</button></td>
-                </tr>
+                    <td><button class="btn btn-primary" onclick="Approve()">Approve</button></td>
+                    <td><button class="btn btn-primary" onclick="Decline()">Reject</button></td>
+                </tr> -->
             </tbody>
         </table>
     </div>
@@ -158,6 +160,22 @@
         <br><br>
         <button type="submit" class="btn btn-primary">Update member</button>
     </form> -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+        authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+        databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+        projectId: "unified-recharge-server-a3206",
+        storageBucket: "unified-recharge-server-a3206.appspot.com",
+        messagingSenderId: "251707690647"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="index_members.js"></script>
 </body>
 
 </html>
