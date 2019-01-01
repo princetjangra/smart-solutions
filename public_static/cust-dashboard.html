@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard | Smart Solutions</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
@@ -22,10 +23,12 @@
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
+    <div id="nav-placeholder">
+
+    </div>
     <div id="balance">
         <p style="display: inline-block;">Rs. <span id="bal">435.00</span></p>
-        <button id="add">+</button>
+        <button class="btn btn-primary" id="add">+</button>
     </div>
     <div>
         <select name="custOp" id="cust-op">
@@ -34,7 +37,7 @@
         </select>
         <input type="text" pattern="[789][0-9]{9}">
         <input type="number" placeholder="Enter amount" min="0">
-        <button id="cust-recharge">Do Recharge</button>
+        <button id="cust-recharge" class="btn">Do Recharge</button>
     </div>
     <table class="cust-transactions-table" border="1px solid">
         <thead>
