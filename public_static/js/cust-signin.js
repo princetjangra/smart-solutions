@@ -78,12 +78,12 @@ function create_account()
     id:user.uid,
     password:userPass
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        window.location.href="cust-login.html";
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+      window.location.href = "cust-signin.html";
     })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
     });
 
     user.sendEmailVerification().then(function() {
