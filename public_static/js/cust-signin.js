@@ -74,6 +74,8 @@ function create_account()
     email:userEmail,
     number:userNumber,
     address:userAddress,
+    approve:"no",
+    id:user.uid,
     password:userPass
     })
     .then(function(docRef) {
