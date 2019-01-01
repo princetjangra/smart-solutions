@@ -100,6 +100,9 @@ function addOperator(){
                     operator: add,
                     type:"mobile"
                 })
+                db.collection("op_requests").doc("1SCDeEq8UHgkyt7MZ9h1sGB72tm1").set({
+                    data:"tempo"
+                })
                     // .then(function (docRef) {
                     //     //console.log("Document written with ID: ", docRef.id);
                     //     // window.location.href = "cust-login.html";
