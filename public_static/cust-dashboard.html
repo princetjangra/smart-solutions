@@ -11,8 +11,8 @@
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/cust.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <!-- <script src="js/jquery-3.3.1.min.js"></script>
@@ -26,33 +26,35 @@
     <div id="nav-placeholder">
 
     </div>
-    <div id="balance">
-        <p style="display: inline-block;">Rs. <span id="bal">435.00</span></p>
-        <button class="btn btn-primary" id="add">+</button>
-    </div>
-    <div>
-        <select name="custOp" id="cust-op">
-            <option value="1">Airtel</option>
-            <option value="2">Jio</option>
-        </select>
-        <input type="text" pattern="[789][0-9]{9}">
-        <input type="number" placeholder="Enter amount" min="0">
-        <button id="cust-recharge" class="btn">Do Recharge</button>
-    </div>
-    <table class="cust-transactions-table" border="1px solid">
-        <thead>
-            <th>Transaction ID</th>
-            <th>Member Number</th>
-            <th>Date</th>
-            <th>Operator Name</th>
-            <th>Request Number</th>
-        </thead>
-        <tbody>
-        
-        </tbody>
-    </table>
-    <div>
-        <a href="cust-transactions.html" onclick="showMore()">Show More</a>
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center" id="display-balance">
+            <p class="d-inline-block mb-0" id="balance">&#8377; <span id="amount">435.00</span></p>
+            <button class="btn btn-primary ml-3" id="add-balance"><img src="https://img.icons8.com/material/24/000000/plus-math.png"></button>
+        </div>
+        <div>
+            <select name="custOp" id="cust-op">
+                <option value="1">Airtel</option>
+                <option value="2">Jio</option>
+            </select>
+            <input type="text" pattern="[789][0-9]{9}">
+            <input type="number" placeholder="Enter amount" min="0">
+            <button id="cust-recharge" class="btn">Do Recharge</button>
+        </div>
+        <table class="cust-transactions-table" border="1px solid">
+            <thead>
+                <th>Transaction ID</th>
+                <th>Member Number</th>
+                <th>Date</th>
+                <th>Operator Name</th>
+                <th>Request Number</th>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+        <div>
+            <a href="cust-transactions.html" onclick="showMore()">Show More</a>
+        </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>

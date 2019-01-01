@@ -4,18 +4,21 @@ body{
     margin: 0 auto;
     /* background-image: url(../img/hero-image-3.jpg); */
     /* background: linear-gradient(var(--purple), #3d348b); */
-    background-color: #5d50c6;
+    background-color: #f2f4fb;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
 }
 
+
 /* ---------- Navbar ---------- */
 
 .navbar{
     margin: 0;
-    background:rgba(0, 0, 0, 0.5);
+    /* background-color:rgb(210, 39, 128, 0.75); */
+    background-color:rgb(94, 34, 127, 0.9);
+    /* background:rgba(0, 0, 0, 0.5); */
 }
 
 /* nav ul .nav-link{
@@ -57,12 +60,12 @@ nav ul .nav-item:after{
     display: block;
     width: 0;
     height: 2px;
-    background-color: #fec400;
+    background-color: #f8b500;
     transition: 0.2s;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover, .nav-item:hover .nav-link:hover{
-    color: #fec400;
+    color: #f8b500;
     transition: 0.2s;
 }
 
@@ -109,4 +112,28 @@ nav ul .nav-item:hover::after{
     .index-nav.navbar-nav .nav-link{
         color: #333;
     }
+}
+
+
+/* ---------- cust-dashboard.html ---------- */
+
+#display-balance{
+    text-align: center;
+    font: 2.5rem 'Open Sans', sans-serif;
+    /* font-weight: 500; */
+}
+#amount{
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+#add-balance{
+    background-color: #f8b500;
+    font-weight: bold;
+    border: 2px solid #b38300;
+    vertical-align: middle;
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border-radius: 50%;
 }
