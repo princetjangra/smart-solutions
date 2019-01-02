@@ -93,12 +93,12 @@ function addOperator(){
         docRef.get().then(function (doc) {
             if (doc.exists) {
 
-
-                db.collection("op_requests").doc("1SCDeEq8UHgkyt7MZ9h1sGB72tm1").collection("Mob_operators").doc(add).set({
+                db.collection("op_requests").doc("1SCDeEq8UHgkyt7MZ9h1sGB72tm1").collection("Operators").doc(add).set({
                     name: doc.data().name,
                     email: doc.data().email,
                     number: doc.data().number,
-                    operator: add
+                    operator: add,
+                    type:"mobile"
                 })
                 db.collection("op_requests").doc("1SCDeEq8UHgkyt7MZ9h1sGB72tm1").set({
                     data:"tempo"
@@ -243,11 +243,12 @@ function addDishOperator(){
         docRef.get().then(function (doc) {
             if (doc.exists) {
 
-                db.collection("op_requests").doc("1SCDeEq8UHgkyt7MZ9h1sGB72tm1").collection("dish_operators").doc(add).set({
+                db.collection("op_requests").doc("1SCDeEq8UHgkyt7MZ9h1sGB72tm1").collection("Operators").doc(add).set({
                     name: doc.data().name,
                     email: doc.data().email,
                     number: doc.data().number,
-                    operator: add
+                    operator: add,
+                    type:"Dish"
                 })
                     // .then(function (docRef) {
                     //     console.log("Document written with ID: ", docRef.id);
