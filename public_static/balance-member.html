@@ -82,24 +82,25 @@
         </div>
     </nav>
     <div class="container mt-2">
-        <form class="">
+        
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="balance-name">Mobile No.</label>
-                <input type="text" class="form-control col-8 col-lg-5" id="inlineFormInputName2" placeholder="Mobile Number">
+                <input type="text" class="form-control col-8 col-lg-5" id="balance-member-number" placeholder="Mobile Number">
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="balance-member-amount">Amount</label>
                 <input type="number" class="form-control col-8 col-lg-5" id="balance-member-amount" placeholder="Amount">
             </div>
-            <button type="button" class="btn btn-primary mb-2 mr-sm-2">Transfer</button>
-            <button type="button" class="btn btn-primary mb-2 mr-sm-2">Refund</button><br>
-            <button type="button" class="btn btn-primary mb-2 mr-sm-2">Fetch Table</button>
-        </form>
+            <button type="button" class="btn btn-primary mb-2 mr-sm-2" onclick="onTransfer()">Transfer</button>
+            <button type="button" class="btn btn-primary mb-2 mr-sm-2" onclick="onRefund()">Refund</button><br>
+            <button type="button" class="btn btn-primary mb-2 mr-sm-2" onclick="onfetchTable()">Fetch Table</button>
+        
     </div>
              
   <table class="table table-striped">
    <thead>
       <tr>
+         <th scope="col">Mobile No.</th>
          <th scope="col">Name</th>
          <th scope="col">Type</th>
          <th scope="col">Balance Amt</th>
@@ -108,12 +109,14 @@
    </thead>
    <tbody>
       <tr>
+         <td>4342424242</td>  
          <td>Ojas Communication</td>  
          <td>Admin</td>
          <td>0000.0</td>
          <td>Active</td>
       </tr>
       <tr>
+          <td>4342424242</td>  
          <td>Atul Singla</td>  
          <td>Distributor</td>
          <td>0000.0</td>
@@ -121,4 +124,20 @@
       </tr>
    </tbody>    
   </table>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyD6OemykaNfdrMQEe4eKzaAekG3vHERZIY",
+          authDomain: "unified-recharge-server-a3206.firebaseapp.com",
+          databaseURL: "https://unified-recharge-server-a3206.firebaseio.com",
+          projectId: "unified-recharge-server-a3206",
+          storageBucket: "unified-recharge-server-a3206.appspot.com",
+          messagingSenderId: "251707690647"
+      };
+      firebase.initializeApp(config);
+  </script>
+  
+  <script src="index_balance.js"></script>
 </body>
