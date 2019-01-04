@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transactions | Smart Solutions</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700" rel="stylesheet"> 
-</head>
-
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700|Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/cust.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
@@ -22,24 +19,38 @@
     <!-- <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script> -->
-    <!-- <script src="js/cust.js"></script> -->
-    <div>
-        <a href="cust-dashboard.html"><--</a>
+    <script src="js/cust.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+
     </div>
-    <br>
-    <br>
-    <table class="cust-transactions-table" border="1px solid">
-        <thead>
-            <th>Transaction ID</th>
-            <th>Member Number</th>
-            <th>Date</th>
-            <th>Operator Name</th>
-            <th>Request Number</th>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
+
+    <div class="container my-3">
+        <div class="back-btn py-2">
+            <!-- <a href="cust-dashboard.html"><ion-icon name="ios-arrow-back" size="large"></ion-icon></a> -->
+            <a href="cust-dashboard.html"><i class="material-icons">arrow_back</i></a>
+        </div>
+        <h3>Transactions performed:</h3>
+        <table class="table table-responsive cust-transactions-table">
+            <thead>
+                <th>Transaction ID</th>
+                <th>Member No.</th>
+                <th>Date</th>
+                <th>Operator Name</th>
+                <th>Request Number</th>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+    </div>
+    
+
+    <!-- Script for icons -->
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-firestore.js"></script>
     <script>
