@@ -87,6 +87,32 @@ function create_account()
       console.error("Error adding document: ", error);
     });
 
+    db.collection("Mobiles").doc(userNumber).set({
+      id:user.uid
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        window.location.href = "cust-signin.html";
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+
+            var id1 = user.uid;
+            var res = id1.slice(1, 5);
+            var res2 = reverse(res)
+            console.log(res2)
+      db.collection("mBalance").doc(res2).set({
+        coins:"0"
+        })
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          window.location.href = "cust-signin.html";
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
+
     user.sendEmailVerification().then(function() {
     // Email sent.
        window.alert("Verification sent");
