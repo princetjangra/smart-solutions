@@ -9,6 +9,7 @@ body{
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    overflow-x: hidden;
 }
 
 
@@ -21,10 +22,6 @@ body{
     /* background:rgba(0, 0, 0, 0.5); */
 }
 
-/* nav ul .nav-link{
-    padding: 1rem;
-} */
-
 li.nav-item, #signout{
     font-size: 0.8rem;
     margin: 0 0.25rem 0.25rem 0;
@@ -33,27 +30,39 @@ li.nav-item, #signout{
 
 .navbar-dark .navbar-nav .nav-link{
     color: rgba(255, 255, 255, 0.6);
-    /* font-weight: 600; */
 }
+
 .nav-item a.nav-link{
-    font: 0.8rem 'Raleway', sans-serif;
+    font: 0.85rem 'Raleway', sans-serif;
     vertical-align: middle;
-    /* line-height: 20px; */
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.07rem;
     transition: 0.1s;
-    /* font-family: 'Raleway', sans-serif; */
     /* text-transform: uppercase; */
-    /* font-weight: 600; */
 }
 
 #signout{
-    font: 0.8rem 'Raleway', sans-serif;
-    letter-spacing: 0.05rem;
+    font: 0.85rem 'Raleway', sans-serif;
+    letter-spacing: 0.07rem;
 }
 
-.nav-item a.nav-link:hover, #signout:hover{
+.nav-item a.nav-link:hover{
+    /* Faking shadows method 
+    text-shadow: 0 0 0.6px rgba(255, 255, 255, 1), 0 0 0.6px rgba(255, 255, 255, 1); */
     font-weight: 600;
 }
+#signout:hover{
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+}
+/* To prevent shifting of other elements on focusing
+.nav-item a.nav-link::after, #signout::after{
+    display: block;
+    content: attr(title);
+    font-weight: 600;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+} */
 
 nav ul .nav-item:after{
     content: '';
@@ -64,7 +73,7 @@ nav ul .nav-item:after{
     transition: 0.2s;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover, .nav-item:hover .nav-link:hover{
+.navbar-dark .navbar-nav .nav-link:hover{
     color: #f8b500;
     transition: 0.2s;
 }
@@ -77,8 +86,100 @@ nav ul .nav-item:hover::after{
 .index-nav.navbar-nav .nav-link{
     color: rgba(255, 255, 255, 0.75);
 }
+.index-nav a.nav-link:hover{
+    letter-spacing: 0.06rem;
+}
+
+/* ----- Common for all pages ----- */
+
+.back-btn a{
+    color: #d22780;
+    overflow: hidden;
+}
+.back-btn a i{
+    transition: all 0.2s ease;
+    /* 0.25s cubic-bezier(.67,.02,.31,.57) */
+}
+
+.back-btn a i:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+    /* font-size: 32px; */
+    z-index: 1;
+}
+
+
+/* ---------- cust-dashboard.html ---------- */
+
+#display-balance{
+    text-align: center;
+    font: 2.75rem 'Open Sans', sans-serif;
+    /* font-weight: 500; */
+}
+#amount{
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+#add-balance{
+    padding: 0;
+    background-color: #f8b500;
+    border: 2px solid rgb(206, 150, 0);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+#add-balance i{
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.35);
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+#add-balance:hover{
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(248, 181, 0, 0.75); */
+}
+
+.recharge-btn{
+    font: 0.9rem 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0 1.5rem;
+    color: #eee;
+    background-color: #a43b87;
+    /* width: 100px; */
+    height: 45px;
+    border-radius: 5rem;
+}
+.recharge-btn:hover{
+    color: #eee;
+    background-color: #9b287b;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.load-more{
+    font: 0.8rem 'Raleway', sans-serif;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    color: #ddd;
+    background-color: #3f88c5;
+}
+.load-more:hover{
+    color: #fff;
+}
+
+
+/* ----- For large screens ----- */
 
 @media screen and (min-width: 992px){
+
+    /* --- Navbar --- */
     li.nav-item, #signout{
         margin: 0 0.25rem;
         vertical-align: middle;
@@ -96,7 +197,6 @@ nav ul .nav-item:hover::after{
         transition: 0.1s;
     }
     #signout:hover{
-        font-weight: normal;
         box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -106,34 +206,10 @@ nav ul .nav-item:hover::after{
 
     .navbar-dark .navbar-nav .nav-link:hover{
         color: rgba(255, 255, 255, 0.9);
-        /* color: #111; */
     }
-    /* Index page navbar only */
+
+    /* --- Index page navbar only --- */
     .index-nav.navbar-nav .nav-link{
-        color: #333;
+        color: rgba(255, 255, 255, 0.6);
     }
-}
-
-
-/* ---------- cust-dashboard.html ---------- */
-
-#display-balance{
-    text-align: center;
-    font: 2.5rem 'Open Sans', sans-serif;
-    /* font-weight: 500; */
-}
-#amount{
-    font-weight: bold;
-    letter-spacing: 0.15rem;
-}
-
-#add-balance{
-    background-color: #f8b500;
-    font-weight: bold;
-    border: 2px solid #b38300;
-    vertical-align: middle;
-    width: 52px;
-    height: 52px;
-    overflow: hidden;
-    border-radius: 50%;
 }
