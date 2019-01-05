@@ -4,44 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700" rel="stylesheet"> 
+    <title>Register | Smart Solutions</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,600,700|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/cust-signin.css">
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/cust.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/cust.js"></script>
 </head>
+
 <body>
     <!-- <form action="" method="post"> -->
-        <div>
-            <label for="cust-name">Enter your name </label>
-            <input type="text" id="cust-name" placeholder="John Doe">
+        <div class="container">
+            <div class="row" id="login_div">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin">
+                        <div class="card-body">
+                                <h5 class="card-title text-center">Register Account</h5>
+                            <div class="form-signin cust-register">
+                                <div class="form-label-group">
+                                    <label class="col-form-label-sm" for="cust-name">Enter your name </label>
+                                    <input type="text" class="form-control" id="cust-name" placeholder="John Doe">
+                                </div>
+
+                                <div class="form-label-group">
+                                    <label class="col-form-label-sm" for="cust-email">Enter your email </label>
+                                    <input class="form-control" type="email" name="" id="cust-email" placeholder="johndoe@abc.com">
+                                </div>
+
+                                <div class="form-label-group">
+                                    <label class="col-form-label-sm" for="cust-phone">Enter your mobile number </label>
+                                    <input class="form-control" type="text" name="" id="cust-phone" placeholder="9876543210">
+                                </div>
+
+                                <div class="form-label-group">
+                                    <label class="col-form-label-sm" for="cust-address">Enter your address </label>
+                                    <input class="form-control" type="text" name="" id="cust-address" placeholder="Enter your address">
+                                </div>
+
+                                <div class="form-label-group">
+                                    <label class="col-form-label-sm" for="cust-pass">Enter password</label>
+                                    <input class="form-control" type="password" name="" id="cust-pass" placeholder="Enter password">
+                                </div>
+
+                                <!-- <button type="submit">Register</button> -->
+                                <button class="btn btn-lg btn-primary btn-block" onclick="create_account()">CREATE A NEW ACCOUNT</button>
+                                <!-- </form> -->
+
+                                <hr class="mt-3 mb-2">
+                                <div class="text-center">
+                                    <a href="cust-signin.html">Have account? Signin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br>
-        <div>
-            <label for="cust-email">Enter your email </label>
-            <input type="email" name="" id="cust-email" placeholder="johndoe@abc.com">
-        </div>
-        <br>
-        <div>
-            <label for="cust-phone">Enter your mobile number </label>
-            <input type="text" name="" id="cust-phone" placeholder="9876543210">
-        </div>
-        <br>
-        <div>
-            <label for="cust-address">Enter your address </label>
-            <input type="text" name="" id="cust-address">
-        </div>
-        <br>
-        <div>
-            <label for="cust-pass">Enter password</label>
-            <input type="password" name="" id="cust-pass">
-        </div>
-        </div>
-        <br>
-        <!-- <button type="submit">Register</button> -->
-        <button onclick="create_account()">Create a new account</button>
-    <!-- </form> -->
-    <br>
-    <div>
-        <a href="cust-signin.html">Have account? Signin</a>
-    </div>
+        
     
     <!-- Script for icons -->
     <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
