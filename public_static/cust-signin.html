@@ -1,10 +1,68 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Sign In</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/cust-signin.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | Smart Solutions</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,600,700|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/cust-signin.css">
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/cust.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/cust.js"></script>
 </head>
+
 <body>
+
+    <div class="container">
+        <div class="row" id="login_div">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sign In</h5>
+                        <div class="form-signin">
+                            <div class="form-label-group">
+                                <!-- <label for="inputEmail">Email address</label> -->
+                                <input type="email" id="email_field" class="form-control" placeholder="Email address" required autofocus>
+                            </div>
+    
+                            <div class="form-label-group">
+                                <!-- <label for="inputPassword">Password</label> -->
+                                <input type="password" id="password_field" class="form-control" placeholder="Password" required>
+                            </div>
+    
+                        <!--
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                            </div>
+                        -->
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="login()">Sign in</button>
+                            <div class="text-right">
+                                <a href="forgot.html" class="nav-link">Forgot?</a>
+                            </div>
+                            <hr class="mt-2 mb-4">
+                        </div>
+                        <div class="text-center">
+                            <a href="cust-register.html" class="ml-auto">Register</a>
+                        </div>
+                    </div>
+                    <!-- <hr> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="login_div" class="main-div">
         <h3>Sign In</h3>
@@ -14,37 +72,37 @@
         <button onclick="login()">Sign In</button>
         <a href="cust-register.html">Create a new account</a>
     </div>
- <!--- 
- <div id="signUp_div" class="signUp-div">
-    <h3>Create an account</h3>
-   <div>
-            <label for="cust-name">Enter your name </label>
-            <input type="text" id="cust-name" placeholder="John Doe">
-        </div>
-        <br>
-        <div>
-            <label for="cust-email">Enter your email </label>
-            <input type="email" name="" id="cust-email" placeholder="johndoe@abc.com">
-        </div>
-        <br>
-        <div>
-            <label for="cust-phone">Enter your mobile number </label>
-            <input type="text" name="" id="cust-phone" placeholder="9876543210">
-        </div>
-        <br>
-        <div>
-            <label for="cust-address">Enter your address </label>
-            <input type="text" name="" id="cust-address">
-        </div>
-        <br>
-        <div>
-            <label for="cust-pass">Enter password</label>
-            <input type="password" name="" id="cust-pass">
-        </div>
-        <br>
-     <button>Register</button>      
-  </div>
-!-->
+    <!--- 
+    <div id="signUp_div" class="signUp-div">
+        <h3>Create an account</h3>
+    <div>
+                <label for="cust-name">Enter your name </label>
+                <input type="text" id="cust-name" placeholder="John Doe">
+            </div>
+            <br>
+            <div>
+                <label for="cust-email">Enter your email </label>
+                <input type="email" name="" id="cust-email" placeholder="johndoe@abc.com">
+            </div>
+            <br>
+            <div>
+                <label for="cust-phone">Enter your mobile number </label>
+                <input type="text" name="" id="cust-phone" placeholder="9876543210">
+            </div>
+            <br>
+            <div>
+                <label for="cust-address">Enter your address </label>
+                <input type="text" name="" id="cust-address">
+            </div>
+            <br>
+            <div>
+                <label for="cust-pass">Enter password</label>
+                <input type="password" name="" id="cust-pass">
+            </div>
+            <br>
+        <button>Register</button>      
+    </div>
+    !-->
     <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
     <p id="user_para">You're currently logged in.</p>

@@ -18,6 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       var email_verified = user.emailVerified;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id + "verified" + email_verified;
+      window.location.href = "cust-dashboard.html";
 
     }
 

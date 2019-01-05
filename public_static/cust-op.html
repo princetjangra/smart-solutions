@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Operator | Smart Solutions</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700" rel="stylesheet"> 
-</head>
-
-<body>
+    <title>Manage Operators | Smart Solutions</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,600|Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
@@ -21,86 +18,90 @@
     <!-- <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script> -->
-    <!-- <script src="js/cust.js"></script> -->
-    <style>
-        #cust-add-op:invalid, #cust-del-op:invalid{
-            color: grey;
-            border: 1px solid red;
-        }
-    </style>
+    <script src="js/cust.js"></script>
 </head>
 
 <body>
-    <div>
-        <a href="cust-dashboard.html"></a>
-        </div>
-        <br>
-        <br>
-    <div>
-        <select name="" id="cust-add-op">
-            <option value="1" selected disabled hidden>Select an operator to Add</option>
-        </select>
-        <div>
-            <button onclick="addOperator()">Request to ADD</button>
-        </div>
-    </div>
-    <div>
-        <select name="" id="cust-del-op">
-            <option value="1" selected disabled hidden>Select an operator to Delete</option>
-        </select>
-        <div>
-            <button onclick="deleteOperator()">Request to DELETE</button>
-        </div>
-    </div>
-    <ul>
-        <li>Airtel</li>
-        <li>Jio</li>
-    </ul>
+    <div id="nav-placeholder">
 
-    <table class="table" id="cust-op-table">
-        <thead>
-            <th>Operators</th>
-            <th>margin</th>
-            </thead>
-            <tbody>
-            </tbody>
-    </table>
-    <!-- Dish operator -->
-    <div>
-        <a href="cust-dashboard.html"></a>
-        </div>
-        <br>
-        <br>
-    <div>
-        <select name="" id="cust-add-dish-op">
-            <option value="1" selected disabled hidden>Select an operator to Add</option>
-        </select>
-        <div>
-            <button onclick="addDishOperator()">Request to ADD</button>
-        </div>
     </div>
-    <div>
-        <select name="" id="cust-del-dish-op">
-            <option value="1" selected disabled hidden>Select an operator to Delete</option>
-        </select>
-        <div>
-            <button onclick="deleteDishOperator()">Request to DELETE</button>
-        </div>
-    </div>
-    <ul>
-        <li>Dish Tv</li>
-        <li>Jio</li>
-        <li>d2h</li>
-    </ul>
 
-    <table class="table" id="cust-dish-op-table">
-        <thead>
-            <th>Dish-Operators</th>
-            <th>Dish-margin</th>
-            </thead>
-            <tbody>
-            </tbody>
-    </table>
+    <div class="container my-3">
+        <div class="back-btn py-2">
+            <!-- <a href="cust-dashboard.html"><ion-icon name="ios-arrow-back" size="large"></ion-icon></a> -->
+            <a href="cust-dashboard.html"><i class="material-icons">arrow_back</i></a>
+        </div>
+
+        <div class="d-flex flex-column flex-lg-row op-page">
+
+            <div class="form-group">
+                <h3>Manage Mobile Operators</h3>
+                <div class="form-row my-2">
+                    <div class="col-sm-8 col-lg-5">
+                        <select class="custom-select" name="" id="cust-add-op">
+                            <option value="1" selected disabled hidden>Select an operator to Add</option>
+                        </select>
+                    </div>
+                    <div class="col-auto my-2 my-sm-0">
+                        <button class="btn btn-primary" onclick="addOperator()">Request to ADD</button>
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col-sm-8 col-lg-5">
+                        <select class="custom-select" name="" id="cust-del-op">
+                            <option value="1" selected disabled hidden>Select an operator to Delete</option>
+                        </select>
+                    </div>
+                    <div class="col-auto my-2 my-sm-0">
+                        <button class="btn btn-primary" onclick="deleteOperator()">Request to DELETE</button>
+                    </div>
+                </div>
+                <table class="table" id="cust-op-table">
+                    <thead>
+                        <th>Operators</th>
+                        <th>Margin</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        
+        
+            <!-- Dish operator -->
+            <div class="form-group">
+                <h3>Manage Dish Operators</h3>
+                <div class="form-row my-2">
+                    <div class="col-sm-8 col-lg-5">
+                        <select class="custom-select" name="" id="cust-add-dish-op">
+                            <option value="1" selected disabled hidden>Select an operator to Add</option>
+                        </select>
+                    </div>
+                    <div class="col-auto my-2 my-sm-0">
+                        <button class="btn btn-primary" onclick="addDishOperator()">Request to ADD</button>
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col-sm-8 col-lg-5">
+                        <select class="custom-select" name="" id="cust-del-dish-op">
+                            <option value="1" selected disabled hidden>Select an operator to Delete</option>
+                        </select>
+                    </div>
+                    <div class="col-auto my-2 my-sm-0">
+                        <button class="btn btn-primary" onclick="deleteDishOperator()">Request to DELETE</button>
+                    </div>
+                </div>
+                <table class="table" id="cust-dish-op-table">
+                    <thead>
+                        <th>Dish-Operators</th>
+                        <th>Dish-margin</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
     
     <!-- Script for icons -->
     <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>

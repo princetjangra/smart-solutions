@@ -12,6 +12,15 @@ body{
     overflow-x: hidden;
 }
 
+.disp{
+    height: 89vh;
+}
+
+.disp h1{
+    color: #fd9250;
+    font-weight: 600;
+}
+
 
 /* ---------- Navbar ---------- */
 
@@ -206,6 +215,10 @@ nav ul .nav-item:hover::after{
 
     .navbar-dark .navbar-nav .nav-link:hover{
         color: rgba(255, 255, 255, 0.9);
+    }
+
+    .op-page .form-group{
+        width: 50%;
     }
 
     /* --- Index page navbar only --- */
