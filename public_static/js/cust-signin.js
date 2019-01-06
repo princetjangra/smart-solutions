@@ -67,64 +67,70 @@ function create_account()
     window.alert("Error : " + errorMessage);
 
     });
-    //  function send_verification()
-    // {
-    var user = firebase.auth().currentUser;
-    db.collection("users").doc(user.uid).set({
-    name:userName,
-    email:userEmail,
-    number:userNumber,
-    address:userAddress,
-    approve:"no",
-    id:user.uid,
-    password:userPass
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      window.location.href = "cust-signin.html";
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
+
+    var id1;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        var user = firebase.auth().currentUser;
+         id1 = user.uid
+         db.collection("users").doc(id1).set({
+          name:userName,
+          email:userEmail,
+          number:userNumber,
+          address:userAddress,
+          approve:"no",
+          id:id1,
+          password:userPass
+          })
+          .then(function (docRef) {
+           // window.location.href = "cust-signin.html";
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+          });
+
+          var res = id1.slice(1, 5);
+          var res2 = reverse(res)
+          console.log(res2)
+          db.collection("mBalance").doc(res2).set({
+          coins:"0"
+          })
+          .then(function (docRef) {
+            //window.location.href = "cust-signin.html";
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+          });
+
+          db.collection("Mobiles").doc(userNumber).set({
+            id:id1
+            })
+            .then(function (docRef) {
+              console.log("Document written with ID: ", docRef.id);
+             // window.location.href = "cust-signin.html";
+            })
+            .catch(function (error) {
+              console.error("Error adding document: ", error);
+            });
+
+            user.sendEmailVerification().then(function() {
+              // Email sent.
+                 window.alert("Verification sent");
+              }).catch(function(error) {
+              // An error happened.
+                 window.alert("Error : " + error.message);
+              });
+              // }
+    } else {
+        console.log("Error mine")
+    }
     });
-
-    db.collection("Mobiles").doc(userNumber).set({
-      id:user.uid
-      })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        window.location.href = "cust-signin.html";
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-
-            var id1 = user.uid;
-            var res = id1.slice(1, 5);
-            var res2 = reverse(res)
-            console.log(res2)
-      db.collection("mBalance").doc(res2).set({
-        coins:"0"
-        })
-        .then(function (docRef) {
-          console.log("Document written with ID: ", docRef.id);
-          window.location.href = "cust-signin.html";
-        })
-        .catch(function (error) {
-          console.error("Error adding document: ", error);
-        });
-
-    user.sendEmailVerification().then(function() {
-    // Email sent.
-       window.alert("Verification sent");
-    }).catch(function(error) {
-    // An error happened.
-       window.alert("Error : " + error.message);
-    });
-    // }
-
+    
+        
 }
-
-
+function reverse(s){
+  return s.split("").reverse().join("");
+}
 function logout(){
   firebase.auth().signOut();
 }
